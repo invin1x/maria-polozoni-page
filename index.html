@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Итальянские сумки | Maria Polozoni</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <button class="nav-btn active" data-tab="home">Главная</button>
+            <button class="nav-btn" data-tab="assortment">Ассортимент</button>
+            <button class="nav-btn" data-tab="contacts">Контакты</button>
+        </nav>
+    </header>
+
+    <main id="home" class="tab-content active">
+        <img src="images/logo.png" style="display: block; margin: 0 auto; width: min(100%, 512px);">
+        <div id="home-categories"></div>
+        <div class="cta-container">
+            <button class="btn-primary" onclick="switchTab('assortment')">Весь ассортимент</button>
+        </div>
+    </main>
+
+    <main id="assortment" class="tab-content">
+        <div class="filters">
+            <input type="text" id="search-input" placeholder="Поиск товара...">
+            <select id="sort-select">
+                <option value="default">По умолчанию</option>
+                <option value="asc">Цена: по возрастанию</option>
+                <option value="desc">Цена: по убыванию</option>
+            </select>
+        </div>
+        <div id="stock-grid" class="product-grid"></div>
+        <p style="margin-top: 20px; text-align: center;">Не&nbsp;нашли&nbsp;то&nbsp;что&nbsp;искали? Посетите&nbsp;наш&nbsp;<a href="https://t.me/MariaPolozonii">Telegram&nbsp;канал</a></p>
+    </main>
+
+    <main id="contacts" class="tab-content">
+        <div class="contact-info">
+            <p><strong>Наш&nbsp;адрес:</strong> г.&nbsp;Москва, 19-й&nbsp;км&nbsp;МКАД, ТК&nbsp;Южные&nbsp;ворота. Вход&nbsp;19, линия&nbsp;14, павильоны&nbsp;25&nbsp;и&nbsp;27.</p>
+            <div class="map-container">
+                <iframe src="https://yandex.com/map-widget/v1/?from=mapframe&indoorLevel=1&ll=37.783231%2C55.621897&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjkzMzQ3ORJH0KDQvtGB0YHQuNGPLCDQnNC-0YHQutCy0LAsINCc0JrQkNCULCAxOS3QuSDQutC40LvQvtC80LXRgtGALCDQstC7MjDRgTEiCg0IIhdCFdN8XkI%2C&source=mapframe&utm_source=mapframe&z=15" width="100%" height="300" frameborder="0" allowfullscreen="true"></iframe>
+            </div>
+            <p><strong>Телефон:</strong> <a href="tel:+79154626141">+7 (915) 462-61-41</a></p>
+            <div class="socials">
+                <a href="https://t.me/MariaPolozonii">Наш Telegram канал</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-gallery">
+                <img id="modal-img" src="" alt="">
+                <div class="gallery-controls" id="gallery-controls">
+                    <button id="prev-img">❮</button>
+                    <button id="next-img">❯</button>
+                </div>
+            </div>
+            <div class="modal-details">
+                <h2 id="modal-title"></h2>
+                <div class="modal-meta">
+                    <span id="modal-article"></span>
+                    <span id="modal-price"></span>
+                </div>
+                <p id="modal-desc"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        Вы можете купить сумки в нашем <a href="https://t.me/MariaPolozonii" target="_blank">Telegram</a>.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
